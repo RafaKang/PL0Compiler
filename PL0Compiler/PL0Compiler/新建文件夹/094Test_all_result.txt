@@ -1,3 +1,0 @@
-cocks:4 rabbits:0
-cocks:0 rabbits:0
-cocks:0 rabbits:0

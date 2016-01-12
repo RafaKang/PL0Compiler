@@ -1,8 +1,0 @@
-var
-  i: integer;
-  c: char;
-begin
-  i := 65;
-  c := i;
-  write(c)
-end.

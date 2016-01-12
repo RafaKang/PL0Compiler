@@ -1,7 +1,0 @@
-begin
-  if 0=0
-  then write(0);
-  else write(0);
-  do write(0);
-  while 0=0;
-end.
