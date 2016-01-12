@@ -1,0 +1,21 @@
+var
+  n, i, j: integer;
+  a: array[64] of integer;
+procedure swap(var a, b: integer);
+var t: integer;
+begin
+  t:=a; a:=b; b:=t
+end;
+begin
+  a[0] := -2147483648;
+  read(n);
+  for i:=1 to n do read(a[i]);
+  for i:=2 to n do begin
+    j := i;
+    while a[j-1] > a[j] do begin
+      swap(a[j], a[j-1]);
+      j := j-1
+    end
+  end;
+  for i:=1 to n do write(a[i])
+end.

@@ -1,0 +1,3 @@
+begin
+  if not 1=2 then write("good") else write("bad")
+end.

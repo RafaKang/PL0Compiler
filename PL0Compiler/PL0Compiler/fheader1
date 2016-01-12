@@ -1,0 +1,5 @@
+.code
+start:
+main proc
+PUSH EBP
+MOV EBP, ESP

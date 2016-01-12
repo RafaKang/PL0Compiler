@@ -1,0 +1,7 @@
+function f: integer;
+begin
+  f := 123;
+end;
+begin
+  write(f)
+end.

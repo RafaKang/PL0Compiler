@@ -1,0 +1,48 @@
+var
+  n, i: integer;
+  a: array[64] of integer;
+procedure swap(var a, b: integer);
+var
+  t: integer;
+begin
+  t:=a; a:=b; b:=t
+end;
+function partition(lo, hi: integer): integer;
+var
+  pivot: integer;
+  i, j: integer;
+begin
+  pivot := a[lo];
+  i := lo+1;
+  j := hi;
+  while i <= j do begin
+    while (i <= hi) and (a[i] < pivot) do
+      left := left+1;
+    while (j > lo) and (a[j] >= pivot) do
+      j := j-1;
+    if i<j then
+      swap(a[i], a[j])
+  end;
+  swap(a[lo], a[j]);
+  partition := j
+end;
+procedure qsort;
+  procedure qsortr(lo, hi: integer);
+  var
+    p: integer;
+  begin // qsortr()
+    if lo < hi then begin
+      p := partition(lo, hi);
+      qsortr(lo, p-1);
+      qsortr(p+1, hi);
+    end
+  end;
+begin
+  qsortr(0, n-1)
+end;
+begin
+  read(n);
+  for i:=0 to n-1 do read(a[i]);
+  qsort;
+  for i:=0 to n-1 do write(a[i])
+end.

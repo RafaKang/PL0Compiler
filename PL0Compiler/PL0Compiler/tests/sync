@@ -1,0 +1,19 @@
+var
+  a: integer;
+procedure q(x: integer);
+begin
+  a := x
+end;
+procedure p;
+var
+  x, y: integer;
+begin
+  q(1);
+  x := a;
+  q(2);
+  y := a;
+  write(x); write(y)
+end;
+begin
+  p
+end.

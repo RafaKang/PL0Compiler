@@ -1,0 +1,64 @@
+const 	m = 10;
+
+var 	i,j,k:integer;
+	arr:array[50] of integer;
+	n:integer;
+	ind:array[11] of integer;
+	T:integer;
+
+procedure print;
+var i:integer;
+begin
+	for i := 1 to n do
+	begin
+		write(arr[i]);
+	end;
+	write(" ");
+end;
+
+function dfs(i:integer):integer;
+var j:integer;
+    k:integer;
+begin
+	if i = n + 1 then
+	begin
+		print;
+		dfs := 1;
+	end
+	else
+	begin
+		k:=0;
+		for j := 1 to n do
+			if ind[j] = 0 then
+			begin
+				ind[j] := 1;
+				arr[i] := j;
+				k:= k+ dfs(i + 1);
+				ind[j] := 0;
+			end;
+		dfs:=k;
+	end
+end;
+
+begin
+	read(T);
+	do
+	begin
+		T := T - 1;
+		read(n);
+		if n > m then
+			write("No")
+		else
+		begin
+			j := 1;
+			for i:= 1 to n do
+				j := j * i;
+			write("The total number should be:",j);
+			write(" ");
+			write("The total number is:",dfs(1));
+			write(" ");
+		end
+	end
+	while T > 0;
+end.
+	

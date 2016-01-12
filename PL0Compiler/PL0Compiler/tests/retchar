@@ -1,0 +1,7 @@
+function f: char;
+begin
+  f := 61;
+end;
+begin
+  write(f)
+end.

@@ -1,0 +1,7 @@
+function truncate(x: integer): char;
+begin
+  truncate := x;
+end;
+begin
+  if truncate(12345678) = 78 then write("good") else write("bad")
+end.
