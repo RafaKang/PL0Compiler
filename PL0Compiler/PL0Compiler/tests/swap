@@ -1,0 +1,15 @@
+var
+  a: array[2] of integer;
+procedure swap(var a, b: integer);
+var
+  t: integer;
+begin
+  t := a; a := b; b := t
+end;
+begin
+  a[0] := 123;
+  a[1] := 456;
+  swap(a[0], a[1]);
+  write(a[0]);
+  write(a[1])
+end.

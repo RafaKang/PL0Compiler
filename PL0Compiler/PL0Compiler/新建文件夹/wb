@@ -1,0 +1,13 @@
+var
+  a, b: integer;
+procedure p;
+begin
+  a := 101
+end;
+procedure q;
+begin
+  b := 102
+end;
+begin
+  p; q; write(a); write(b)
+end.

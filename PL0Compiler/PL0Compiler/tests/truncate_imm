@@ -1,0 +1,5 @@
+var
+  c: char;
+begin
+  c := 1000;
+end.

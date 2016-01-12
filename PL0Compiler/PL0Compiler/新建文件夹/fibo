@@ -1,0 +1,39 @@
+const a0=+1, MAX=23;
+var a,b:integer;s :array[24] of integer;
+procedure initial(tmp:integer);
+	var i:integer;
+	begin
+		s[0]:=a0;
+		s[1]:=tmp;
+		i:= MAX;
+		do
+			begin
+				s[i] := 0;
+				i := i - 1;
+			end
+		while i > 1
+	end;
+function fibo(step:integer):integer;
+	begin
+		if s[step] = 0
+		then
+			begin
+				s[step] := fibo(step-1)+fibo(step-2);
+				fibo := s[step];
+			end
+		else
+			fibo := s[step];
+	end;
+begin 
+	read(a);
+	initial(1);
+	if a > MAX then
+		write("index is too big.")
+	else if a < 2 then
+		write("index is too small.")
+	else
+		begin
+			b:=fibo(a);
+			write(b)
+		end;
+end.

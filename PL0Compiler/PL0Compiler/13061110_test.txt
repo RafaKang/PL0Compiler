@@ -1,0 +1,62 @@
+const MAXN = +000100;   
+
+var num, count : integer;   
+primes : array[100] of integer;   
+
+function test(factor : integer) : integer;
+  var temp : integer;
+  begin
+    write(factor);
+    write(num);
+    if factor + factor * factor / (1000 - 999) * (-factor + 1 + factor) - factor > num   
+    then test := 1   
+    else
+    begin
+      temp := num;
+      do
+        temp := temp - factor
+      while temp >= 1;   
+      if temp = 0   
+      then test := 0
+      else begin write("Digui!");test := test(factor + 1)   end
+    end
+  end;
+
+procedure printPrimes(num1 : integer);   
+  var i : integer;
+  begin   
+    if num1 <= 1  
+    then write("No primes!")   
+    else
+    begin
+      count := 1;
+      primes[count - count] := 2;   
+      if num1 <> 2   
+      then
+      for num := num + 3 - num to -100 + num1 + 100 do   
+        if test(2) = 1
+        then
+        begin
+          primes[count] := num;
+          count := count + 1
+        end
+      ; 
+      write(primes[count - 1]);   
+      for i := count - 2 downto 0 do
+        write(" ", primes[i])  
+    end
+  end
+;
+
+
+begin
+  read(num);
+  if num < 1   
+  then write("Please input a positive integer!")
+  else if num > MAXN
+  then write("The integer input must be less than 101!")
+  else printPrimes(num);
+  read(num);
+end
+.
+
